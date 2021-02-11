@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import triviaReducer from './triviaReducer'
 
 const rootReducer = combineReducers({
-    trivia: "trivia"
+    trivia: triviaReducer,
 })
 
 
