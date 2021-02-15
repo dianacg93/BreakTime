@@ -47,11 +47,12 @@ const TriviaPage = () => {
   const handleChangeQuestion = () => {
     const correctAnswer = trivia[questionIndex].correct_answer;
     const difficulty = trivia[questionIndex].difficulty;
-    
+    console.log("Score", score, scoreVals[difficulty])
+    console.log(correctAnswer, userAnswer)
     if(userAnswer === correctAnswer){
       dispatch({
         type: "CHANGE_SCORE",
-        payload: score + scoreVals[difficulty]
+        payload: scoreVals[difficulty]
       })
     }
     if(questionIndex !== trivia.length-1) {
