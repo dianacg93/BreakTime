@@ -25,6 +25,7 @@ export default function triviaReducer(state = initialState, action) {
         case actions.CHANGE_QUESTION:
             return {...state, questionIndex: action.payload}
         case actions.CHANGE_SCORE:
+            console.log(state.score)
             return {...state, score: state.score + action.payload}
         case actions.START_GAME:
             return {...state, gameStarted: true, gameEnded: false}

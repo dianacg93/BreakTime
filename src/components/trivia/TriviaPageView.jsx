@@ -16,7 +16,7 @@ const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, hand
                     <FormControl>
                         <TextField onChange={handleUserName} id="username-input" label="Input Your Username" variant="outlined"/>
                     </FormControl>
-                    <Button onClick={handleSubmit} variant="contained" color="primary"> privyet Comrad!</Button>
+                    <Button onClick={handleSubmit} variant="contained" color="primary"> Start </Button>
                     </form>
                 </div>
                 : null
@@ -32,10 +32,9 @@ const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, hand
             null}
             {gameEnded ? 
             <Container>
-                <p> {{score} > 0 ? `Great job ${userName}!` : `Try AGAIN!`} </p>
+                <p> {{score} > 0 ? `Great job ${userName}!` : `Try Again!`} </p>
                 <p>Score: {score}</p>
                 <Button onClick={playAgain}>Play Again</Button>
-                <p>Advertise Russia</p>
             </Container>
             :
             null}
