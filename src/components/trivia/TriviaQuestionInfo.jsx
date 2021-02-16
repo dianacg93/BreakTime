@@ -1,8 +1,8 @@
-const TriviaQuestionInfo = ({option, handleUserChoice}) => {
-    
+const TriviaQuestionInfo = ({option, handleUserChoice, isChecked}) => {
+
     return (
         <>
-            <input onClick={handleUserChoice} type="radio" name="options" value={option}/>
+            <input onChange={handleUserChoice} type="radio" value={option} checked={isChecked} />
             <label htmlFor="option">{option}</label> <br/>
         </>
     )
