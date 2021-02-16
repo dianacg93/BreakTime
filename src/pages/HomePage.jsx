@@ -11,7 +11,7 @@ const HomePage = () => {
         Work can be extremely tiring, especially working from home being so
         close to your bed. Here's your wakeup call . . .
       </p>
-      <img src={logo} />
+      <img src={logo} alt="page-logo" />
     </div>
   );
 };

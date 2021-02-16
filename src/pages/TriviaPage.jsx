@@ -13,7 +13,6 @@ const TriviaPage = () => {
 
   const {questionIndex} = initialTrivia.trivia;
   const {trivia} = initialTrivia.trivia;
-  const {score} = initialTrivia.trivia;
 
   const scoreVals = {
     "easy" : 100,
@@ -23,9 +22,15 @@ const TriviaPage = () => {
   
   const [userName, setUserName] = useState("")
   const [userAnswer, setUserAnswer] = useState("")
+  const [isError, setIsError] = useState(false)
   
   const handleUserName = (e) => {
-    setUserName(e.target.value);
+    if(e.target.value) {
+      setUserName(e.target.value);
+      setIsError(false)
+    } else {
+      setIsError(true)
+    }
   }
   
   const handleSubmit = (e) => {
@@ -41,19 +46,26 @@ const TriviaPage = () => {
   }
 
   const handleUserChoice = (e) => {
-    setUserAnswer(e.target.value)
+    if (e.target.value) {
+      setUserAnswer(e.target.value)
+      setIsError(false)
+    } else {
+      setIsError(true)
+    }
   }
 
   const handleChangeQuestion = () => {
+
     const correctAnswer = trivia[questionIndex].correct_answer;
     const difficulty = trivia[questionIndex].difficulty;
-    
+
     if(userAnswer === correctAnswer){
       dispatch({
         type: "CHANGE_SCORE",
-        payload: score + scoreVals[difficulty]
+        payload: scoreVals[difficulty]
       })
     }
+    setUserAnswer("")
     if(questionIndex !== trivia.length-1) {
       dispatch({
         type: "CHANGE_QUESTION",
@@ -64,7 +76,7 @@ const TriviaPage = () => {
         type: "END_GAME"
       })
     }
-    setUserAnswer("")
+
   }
 
   const playAgain = () => {
@@ -84,6 +96,8 @@ const TriviaPage = () => {
               handleUserChoice={handleUserChoice} 
               handleChangeQuestion={handleChangeQuestion} 
               playAgain={playAgain} 
+              userAnswer={userAnswer} 
+              isError={isError} 
             />
   }
   
