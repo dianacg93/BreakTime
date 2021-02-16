@@ -2,11 +2,13 @@ import TriviaQuestionList from './TriviaQuestionList'
 import {Grid, Container, Button, Typography, TextField, FormControl} from '@material-ui/core';
 import './trivia.css'
 
-const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, handleUserChoice, playAgain, userAnswer, isError}) => {
+const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, handleUserChoice, playAgain, userAnswer, isDisabled}) => {
     const {gameStarted, gameEnded, trivia, questionIndex, userName, score} = state.trivia;
-    console.log(state.trivia)
     return (
-        <Grid>
+        <Grid container
+        direction="column"
+        justify="center"
+        alignItems="center">
             <Container align="center" >
             {!gameStarted ?
                  <div className="trivia-container">
@@ -14,9 +16,9 @@ const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, hand
                     <form className="trivia-user-form">
 
                     <FormControl>
-                        <TextField onChange={handleUserName} id="username-input" label="Input Your Username" variant="outlined"/>
-                        {isError ? <span>Please provide a name</span>: null}
-                    <Button disabled={!isError} onClick={handleSubmit} variant="contained" color="primary"> Start </Button>
+                        <TextField onChange={handleUserName} id="username-input" label="Input Your Name" variant="outlined"/>
+                        {isDisabled ? <small>Please provide a name</small>: null}
+                    <Button disabled={isDisabled} onClick={handleSubmit} variant="contained" color="primary"> Start </Button>
                     </FormControl>
                     </form>
                 </div>
@@ -29,12 +31,13 @@ const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, hand
                 handleChangeQuestion={handleChangeQuestion} 
                 handleUserChoice={handleUserChoice} 
                 userAnswer={userAnswer} 
+                isDisabled={isDisabled} 
                 /> 
             : 
             null}
             {gameEnded ? 
             <Container>
-                <p> {{score} > 0 ? `Great job ${userName}!` : `Try Again!`} </p>
+                {score > 0 ? <p> Great job {userName}!</p> : <p>Try Again {userName}!</p>}
                 <p>Score: {score}</p>
                 <Button onClick={playAgain}>Play Again</Button>
             </Container>
