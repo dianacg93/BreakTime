@@ -1,5 +1,3 @@
-import FactsPage from "../../pages/FactsPage";
-
 const Facts = ({ facts, factsClick }) => {
 
     console.log("facts", facts)
