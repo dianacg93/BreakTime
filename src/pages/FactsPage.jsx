@@ -1,13 +1,35 @@
-const FactsPage = () => {
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchFacts } from "../actions/factsAction";
+import Facts from "../components/facts/Facts";
+
+const FactsPage = ({ dispatch, loading, facts, hasErrors }) => {
+  useEffect(() => {
+    dispatch(fetchFacts());
+  }, [dispatch]);
+
+  const renderFacts = () => {
+    if (loading) return <p> Loading Facts...</p>;
+    if (hasErrors) return <p>An error has occurred</p>;
+    return facts;
+  };
+
+  const factsClick = () => {
+    fetchFacts();
+  };
+
   return (
     <div>
-      <h1>Random Facts</h1>
-
-      <h2>EDUCATE WHILE YOU BREAK WITH . . .</h2>
-
-      {/* <p>this is where the api call would be</p> */}
+      <Facts facts={renderFacts()} factsClick={() => factsClick()} />
     </div>
   );
 };
 
-export default FactsPage;
+const mapStateToProps = (state) => ({
+  type: state.facts.type,
+  loading: state.facts.loading,
+  facts: state.facts.facts,
+  hasErrors: state.facts.hasErrors,
+});
+
+export default connect(mapStateToProps)(FactsPage);
