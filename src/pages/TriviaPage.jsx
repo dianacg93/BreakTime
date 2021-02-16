@@ -1,36 +1,111 @@
-import {useEffect} from 'react'
-import {connect} from 'react-redux'
+import {useState} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import {fetchTrivia} from '../actions/triviaActions'
-import Trivia from '../components/Trivia'
+import TriviaPageView from '../components/trivia/TriviaPageView'
 
-const TriviaPage = ({dispatch, loading, trivia, hasErrors}) => {
+const TriviaPage = () => {
 
-  useEffect(() => {
+  const dispatch = useDispatch()
+
+  const initialTrivia = useSelector((state) => {
+    return state
+  })
+
+  const {questionIndex} = initialTrivia.trivia;
+  const {trivia} = initialTrivia.trivia;
+
+  const scoreVals = {
+    "easy" : 100,
+    "medium": 200,
+    "hard": 300
+  }
+  
+  const [userName, setUserName] = useState("")
+  const [userAnswer, setUserAnswer] = useState("")
+  const [isError, setIsError] = useState(false)
+  
+  const handleUserName = (e) => {
+    if(e.target.value) {
+      setUserName(e.target.value);
+      setIsError(false)
+    } else {
+      setIsError(true)
+    }
+  }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
     dispatch(fetchTrivia())
-  }, [dispatch])
-
-  const renderTrivia = () => {
-    if (loading) return <p> Loading Questions...</p>
-    if (hasErrors) return <p>An error has occurred</p>
-    return trivia.map((question, i) => {
-      return <Trivia question={question} key={i} />
+    dispatch({
+      type: "CHANGE_USERNAME", 
+      payload: userName
     })
+    dispatch({
+      type: "START_GAME"
+    })
+  }
+
+  const handleUserChoice = (e) => {
+    if (e.target.value) {
+      setUserAnswer(e.target.value)
+      setIsError(false)
+    } else {
+      setIsError(true)
+    }
+  }
+
+  const handleChangeQuestion = () => {
+
+    const correctAnswer = trivia[questionIndex].correct_answer;
+    const difficulty = trivia[questionIndex].difficulty;
+
+    if(userAnswer === correctAnswer){
+      dispatch({
+        type: "CHANGE_SCORE",
+        payload: scoreVals[difficulty]
+      })
+    }
+    setUserAnswer("")
+    if(questionIndex !== trivia.length-1) {
+      dispatch({
+        type: "CHANGE_QUESTION",
+        payload: questionIndex + 1
+      })
+    } else {
+      dispatch({
+        type: "END_GAME"
+      })
+    }
+
+  }
+
+  const playAgain = () => {
+    dispatch({
+      type: "PLAY_AGAIN"
+    })
+    dispatch(fetchTrivia())
+  }  
+  
+  const renderTrivia = () => {
+    if (initialTrivia.loading) return <p> Loading Questions...</p>
+    if (initialTrivia.hasErrors) return <p>An error has occurred</p>
+    return <TriviaPageView  
+              state={initialTrivia} 
+              handleUserName={handleUserName} 
+              handleSubmit={handleSubmit} 
+              handleUserChoice={handleUserChoice} 
+              handleChangeQuestion={handleChangeQuestion} 
+              playAgain={playAgain} 
+              userAnswer={userAnswer} 
+              isError={isError} 
+            />
   }
   
   return (
     <div>
-      <h1>Trivia</h1>
       {renderTrivia()}
     </div>
   )
 };
 
-const mapStateToProps = (state) => ({
-  loading: state.trivia.loading,
-  trivia: state.trivia.trivia,
-  hasErrors: state.trivia.hasErrors
-})
-
-
-
-export default connect(mapStateToProps)(TriviaPage);
+export default TriviaPage;

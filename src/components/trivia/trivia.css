@@ -1,0 +1,9 @@
+.trivia-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.trivia-user-form {
+  display: flex;
+  flex-direction: column;
+}
