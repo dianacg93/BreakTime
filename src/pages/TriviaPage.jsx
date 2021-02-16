@@ -22,14 +22,14 @@ const TriviaPage = () => {
   
   const [userName, setUserName] = useState("")
   const [userAnswer, setUserAnswer] = useState("")
-  const [isError, setIsError] = useState(false)
+  const [isDisabled, setIsDisabled] = useState(true)
   
   const handleUserName = (e) => {
     if(e.target.value) {
       setUserName(e.target.value);
-      setIsError(false)
+      setIsDisabled(false)
     } else {
-      setIsError(true)
+      setIsDisabled(true)
     }
   }
   
@@ -48,9 +48,9 @@ const TriviaPage = () => {
   const handleUserChoice = (e) => {
     if (e.target.value) {
       setUserAnswer(e.target.value)
-      setIsError(false)
+      setIsDisabled(true)
     } else {
-      setIsError(true)
+      setIsDisabled(false)
     }
   }
 
@@ -97,7 +97,7 @@ const TriviaPage = () => {
               handleChangeQuestion={handleChangeQuestion} 
               playAgain={playAgain} 
               userAnswer={userAnswer} 
-              isError={isError} 
+              isDisabled={isDisabled} 
             />
   }
   
