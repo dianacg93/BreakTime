@@ -12,12 +12,10 @@ const FactsPage = ({ dispatch, loading, facts, hasErrors }) => {
     if (loading) return <p> Loading Facts...</p>;
     if (hasErrors) return <p>An error has occurred</p>;
     return facts;
-
   };
 
   const factsClick = () => {
- dispatch(fetchFacts())
-  
+    dispatch(fetchFacts());
   };
 
   return (
