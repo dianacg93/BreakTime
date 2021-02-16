@@ -2,7 +2,6 @@ import logo from '../../images/logo/logo.png'
 
 const Jokes = ({joke, handleClick}) => {
 
-    console.log("INSIDE JOKE", joke)
     return(
         <div>
             <h1>Dad Jokes</h1>
@@ -21,7 +20,7 @@ const Jokes = ({joke, handleClick}) => {
                 </>
             }
             </div>
-            <button onClick={handleClick} > New Joke</button>
+            <button onClick={handleClick}> New Joke</button>
         </div>
     )
 }

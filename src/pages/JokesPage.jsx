@@ -13,8 +13,6 @@ const JokesPage = () => {
 
   const {joke} = initialJoke
 
-  console.log(joke)
-
   useEffect(() => {
     dispatch(fetchJoke())
   }, [dispatch])
@@ -26,12 +24,12 @@ const JokesPage = () => {
   const renderJoke = () => {
     if (initialJoke.loading) return <p> Loading Joke...</p>
     if (initialJoke.hasErrors) return <p>An error has occurred</p>
-    return <Jokes joke={joke} handleClick={handleClick}/>
+    return joke;
   }
   
   return (
     <div>
-      {renderJoke()}
+      <Jokes joke={renderJoke()} handleClick={() => handleClick()}/>
     </div>
   )
 };

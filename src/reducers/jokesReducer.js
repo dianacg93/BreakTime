@@ -11,7 +11,6 @@ export default function jokesReducer(state = initialState, action) {
         case actions.GET_JOKE:
             return{...state, loading: true}
         case actions.GET_JOKE_SUCCESS:
-            console.log("ACTION", action)
             return {...state, joke:action.payload, loading: false}
         case actions.GET_JOKE_FAILURE:
             return {...state, hasErrors: true, loading: false}
