@@ -2,9 +2,9 @@ import TriviaQuestionList from './TriviaQuestionList'
 import {Grid, Container, Button, Typography, TextField, FormControl} from '@material-ui/core';
 import './trivia.css'
 
-const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, handleUserChoice, playAgain}) => {
+const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, handleUserChoice, playAgain, userAnswer, isError}) => {
     const {gameStarted, gameEnded, trivia, questionIndex, userName, score} = state.trivia;
-    
+    console.log(state.trivia)
     return (
         <Grid>
             <Container align="center" >
@@ -15,18 +15,20 @@ const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, hand
 
                     <FormControl>
                         <TextField onChange={handleUserName} id="username-input" label="Input Your Username" variant="outlined"/>
+                        {isError ? <span>Please provide a name</span>: null}
+                    <Button disabled={!isError} onClick={handleSubmit} variant="contained" color="primary"> Start </Button>
                     </FormControl>
-                    <Button onClick={handleSubmit} variant="contained" color="primary"> Start </Button>
                     </form>
                 </div>
                 : null
             }
             { trivia.length && gameEnded===false ? 
             <TriviaQuestionList    
-                trivia={trivia}    
+                trivia={trivia}
                 questionIndex={questionIndex} 
                 handleChangeQuestion={handleChangeQuestion} 
                 handleUserChoice={handleUserChoice} 
+                userAnswer={userAnswer} 
                 /> 
             : 
             null}
