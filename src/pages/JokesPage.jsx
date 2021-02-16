@@ -1,33 +1,39 @@
 import {useEffect} from 'react'
-import {connect} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import {fetchJoke} from '../actions/jokesActions'
-import Jokes from '../components/jokes/Jokes'
+import Jokes from '../components/jokes/Jokes.jsx'
 
-const JokesPage = ({dispatch, loading, joke, hasErrors}) => {
+const JokesPage = () => {
   
+  const dispatch = useDispatch()
+
+  const initialJoke = useSelector((state) => {
+    return state.jokes
+  })
+
+  const {joke} = initialJoke
+
+  console.log(joke)
+
   useEffect(() => {
     dispatch(fetchJoke())
   }, [dispatch])
 
+  const handleClick = () => {
+    dispatch(fetchJoke())
+  }
+
   const renderJoke = () => {
-    if (loading) return <p> Loading Joke...</p>
-    if (hasErrors) return <p>An error has occurred</p>
-    return joke;
+    if (initialJoke.loading) return <p> Loading Joke...</p>
+    if (initialJoke.hasErrors) return <p>An error has occurred</p>
+    return <Jokes joke={joke} handleClick={handleClick}/>
   }
   
   return (
     <div>
-      <Jokes joke = {renderJoke()}/>
+      {renderJoke()}
     </div>
   )
 };
 
-const mapStateToProps = (state) => (
-  {
-  type: state.jokes.type,
-  loading: state.jokes.loading,
-  joke: state.jokes.joke,
-  hasErrors: state.jokes.hasErrors
-})
-
-export default connect(mapStateToProps)(JokesPage);
+export default JokesPage;
