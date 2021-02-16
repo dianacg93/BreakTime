@@ -18,6 +18,7 @@ export const getFactsFailure = () => ({
 })
 
 export function fetchFacts() {
+    console.log('here i am ')
     return async (dispatch) => {
         dispatch(getFacts())
         try {
