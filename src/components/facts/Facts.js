@@ -16,15 +16,18 @@ const Facts = ({ facts, factsClick }) => {
                 </div>
             </div>
             <div className="lower-screen">
+                <img src={blob} alt="gradient-blob" width="1000" height="980" />
                 <div>
-                    <div className="facts-display">
-                        <h3>{facts.text}</h3>
-                    </div>
-                    <div className="facts-button">
-                        <button onClick={factsClick}> New Facts</button>
+                    <div className="facts-text-button">
+                        <div className="facts-display">
+                            <h3>{facts.text}</h3>
+                        </div>
+                        <div className="facts-button">
+                            <button onClick={factsClick}> New Facts</button>
+                        </div>
                     </div>
                 </div>
-                <img src={blob} alt="gradient-blob" />
+
             </div>
         </div>
 
