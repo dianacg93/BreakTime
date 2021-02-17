@@ -1,34 +1,65 @@
-.facts-container {
-  display: flex;
-  flex-direction: column;
+@font-face {
+  font-family: "Luducudu";
+  src: url("../../fonts/Luducudu.ttf");
+}
+@font-face {
+  font-family: "NanumGothic-Bold";
+  src: url("../../fonts/NanumGothic-Bold.ttf");
+}
+
+@font-face {
+  font-family: "NanumGothic-Regular";
+  src: url("../../fonts/NanumGothic-Regular.ttf");
+}
+@font-face {
+  font-family: "Luducudu-Extrude";
+  src: url("../../fonts/Luducudu-Extrude.ttf");
 }
 
 .title-text {
   font-family: "Luducudu";
-  font-size: 30px;
+  letter-spacing: 2px;
+  font-size: 40px;
   margin: 2% 5%;
 }
 .page-main-text {
+  font-family: "NanumGothic-Bold";
+  letter-spacing: 2px;
+  font-size: 28px;
+  position: absolute;
+  visibility: visible;
+  left: 70px;
+  bottom: 450px;
+  z-index: 200;
 }
-/* .lower-screen {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-} */
+
 .lower-screen img {
   align-self: flex-start;
 }
 
 .facts-display {
-  background-color: aqua;
-  border: 10px solid #000;
-}
+  font-family: "NanumGothic-Regular";
 
+  display: flex;
+  background-color: #c9fffc;
+  /* margin: 5% 30%; */
+  position: absolute;
+  visibility: visible;
+  right: 10px;
+  bottom: 450px;
+  z-index: 200;
+}
 .facts-display h3 {
-  width: 45%;
+  font-family: "NanumGothic-Regular";
+  font-size: 32px;
+  text-align: center;
+  width: 50%;
   padding: 5px;
 }
 .facts-button button {
+  font-family: "Luducudu";
+  letter-spacing: 2px;
+  font-size: 28px;
   background-color: #cd98e8;
   border: none;
   color: white;
@@ -36,6 +67,10 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  visibility: visible;
+  right: 100px;
+  bottom: 300px;
+  z-index: 200;
 }
