@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Luducudu";
+  src: url("../../fonts/Luducudu.ttf");
+}
+
 @media only screen and (max-width: 1930px) {
   .jokes-container {
     display: flex;
@@ -63,9 +68,10 @@
     color: #000;
     border: none;
     border-radius: 2px;
-    padding: 5px 10px;
+    padding: 10px;
     font-size: 1.5em;
-    font-family: "Nanum Gothic";
+    font-family: "Luducudu";
+    color: #fff;
     font-weight: bold;
     margin: 0 10px;
     width: 170px;
