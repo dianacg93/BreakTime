@@ -26,6 +26,8 @@
   font-family: "NanumGothic-Bold";
   letter-spacing: 2px;
   font-size: 28px;
+  color: white;
+
   position: absolute;
   visibility: visible;
   left: 70px;
@@ -39,9 +41,8 @@
 
 .facts-display {
   font-family: "NanumGothic-Regular";
-
   display: flex;
-  background-color: #c9fffc;
+  /* background-color: #c9fffc; */
   /* margin: 5% 30%; */
   position: absolute;
   visibility: visible;
