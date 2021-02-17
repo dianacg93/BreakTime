@@ -1,5 +1,5 @@
 import TriviaQuestionList from './TriviaQuestionList'
-import {Grid, Container, Button, Typography, TextField, FormControl} from '@material-ui/core';
+import {Grid, Container, Button, TextField, FormControl} from '@material-ui/core';
 import './trivia.css'
 
 const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, handleUserChoice, playAgain, userAnswer, isDisabled}) => {
@@ -12,14 +12,13 @@ const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, hand
             <Container align="center" >
             {!gameStarted ?
                  <div className="trivia-container">
-                    <Typography variant="h2" color="initial" >Trivia Page</Typography>
+                    <h1 className="title" >It's Trivia Time! </h1>
                     <form className="trivia-user-form">
-
-                    <FormControl>
-                        <TextField onChange={handleUserName} id="username-input" label="Input Your Name" variant="outlined"/>
-                        {isDisabled ? <small>Please provide a name</small>: null}
-                    <Button disabled={isDisabled} onClick={handleSubmit} variant="contained" color="primary"> Start </Button>
-                    </FormControl>
+                        <FormControl className="name-form">
+                            <TextField className="name-input" onChange={handleUserName} id="username-input" label="Input Your Name" variant="outlined"/>
+                            {isDisabled ? <small className="name-warning">Please provide a name</small>: null}
+                        <Button disabled={isDisabled} onClick={handleSubmit} variant="contained" color="primary"> Start </Button>
+                        </FormControl>
                     </form>
                 </div>
                 : null
@@ -36,11 +35,11 @@ const Trivia = ({state, handleUserName, handleSubmit, handleChangeQuestion, hand
             : 
             null}
             {gameEnded ? 
-            <Container>
-                {score > 0 ? <p> Great job {userName}!</p> : <p>Try Again {userName}!</p>}
-                <p>Score: {score}</p>
+            <div className="score-container">
+                {score > 0 ? <h2> Great job {userName}!</h2> : <h2>Try Again {userName}!</h2>}
+                <h3>Score: {score}</h3>
                 <Button onClick={playAgain}>Play Again</Button>
-            </Container>
+            </div>
             :
             null}
             </Container>

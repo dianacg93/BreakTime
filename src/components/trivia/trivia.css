@@ -1,9 +1,179 @@
-.trivia-container {
-  display: flex;
-  flex-direction: column;
+@font-face {
+  font-family: "Luducudu";
+  src: url("../../fonts/Luducudu.ttf");
 }
 
-.trivia-user-form {
-  display: flex;
-  flex-direction: column;
+@media only screen and (max-width: 1930px) {
+  .trivia-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-family: "Luducudu";
+    font-size: 3.5em;
+    letter-spacing: 4px;
+  }
+
+  .trivia-user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .question-container {
+    background-color: #b1eae859;
+    padding: 5px;
+    margin-top: 20px;
+  }
+
+  .question-text {
+    font-family: "Nanum Gothic";
+  }
+
+  .trivia-user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .options-container {
+    display: flex;
+    padding: 2px;
+  }
+
+  .option-text {
+    font-size: 1.25em;
+    font-weight: 400;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .trivia-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-family: "Luducudu";
+    font-size: 3.5em;
+    letter-spacing: 4px;
+  }
+
+  .trivia-user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .question-container {
+    background-color: #b1eae859;
+    padding: 5px;
+    margin-top: 20px;
+  }
+
+  .question-text {
+    font-family: "Nanum Gothic";
+    font-size: 3em;
+  }
+
+  .trivia-user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .options-container {
+    display: flex;
+    padding: 2px;
+  }
+
+  .option-text {
+    font-size: 2.5em;
+    font-weight: 400;
+  }
+
+  .score-container {
+    background-color: #b1eae859;
+    padding: 5px;
+    margin-top: 20px;
+  }
+
+  .score-container h2 {
+    font-size: 4em;
+  }
+
+  .score-container h3 {
+    font-size: 3em;
+  }
+
+  .score-container button {
+    height: 50px;
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .trivia-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    font-family: "Luducudu";
+    font-size: 3.5em;
+    letter-spacing: 4px;
+  }
+
+  .trivia-user-form {
+    width: 100%;
+  }
+
+  .question-container {
+    background-color: #b1eae859;
+    padding: 5px;
+    margin-top: 20px;
+  }
+
+  .question-text {
+    font-family: "Nanum Gothic";
+    font-size: 1.5em;
+  }
+
+  .trivia-user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .options-container {
+    display: flex;
+    padding: 2px;
+  }
+
+  .option-text {
+    font-size: 1.25em;
+    font-weight: 400;
+  }
+
+  .score-container {
+    background-color: #b1eae859;
+    padding: 5px;
+    margin-top: 20px;
+  }
+
+  .score-container h2 {
+    font-size: 2em;
+  }
+
+  .score-container h3 {
+    font-size: 1.5em;
+  }
+
+  .score-container button {
+    height: 30px;
+    font-size: 1.25em;
+  }
 }
