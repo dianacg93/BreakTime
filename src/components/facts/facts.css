@@ -20,12 +20,12 @@
   font-family: "Luducudu";
   letter-spacing: 2px;
   font-size: 40px;
-  margin: 2% 5%;
 }
 .page-main-text {
   font-family: "NanumGothic-Bold";
   letter-spacing: 2px;
-  font-size: 28px;
+  font-size: 32px;
+  color: white;
   position: absolute;
   visibility: visible;
   left: 70px;
@@ -39,10 +39,7 @@
 
 .facts-display {
   font-family: "NanumGothic-Regular";
-
   display: flex;
-  background-color: #c9fffc;
-  /* margin: 5% 30%; */
   position: absolute;
   visibility: visible;
   right: 10px;
@@ -52,9 +49,10 @@
 .facts-display h3 {
   font-family: "NanumGothic-Regular";
   font-size: 32px;
-  text-align: center;
   width: 50%;
   padding: 5px;
+  display: flex;
+  justify-content: right;
 }
 .facts-button button {
   font-family: "Luducudu";
@@ -73,4 +71,11 @@
   right: 100px;
   bottom: 300px;
   z-index: 200;
+}
+
+@media only screen and (max-width: 736px) {
+  .jokes-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
