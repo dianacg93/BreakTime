@@ -11,8 +11,6 @@ import rootReducer from './reducers/index';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
-// import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

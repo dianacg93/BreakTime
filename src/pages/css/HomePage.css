@@ -1,0 +1,74 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 95%;
+}
+
+.welcome-text {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bold;
+  font-size: 100px;
+  margin: 2% 5%;
+}
+
+.text-structure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.working-text {
+  font-size: 2em;
+  padding: 0 10px;
+}
+
+.wake-up {
+  margin: 20px;
+  background-color: #f73f368c;
+  border-radius: 50% 30%/ 70% 30%;
+  color: #000;
+  text-align: center;
+}
+
+.wake-up h3 {
+  font-size: 2em;
+  font-family: "Nanum Gothic";
+  font-weight: bold;
+  text-indent: 5%;
+  color: #fff;
+}
+
+.enjoy-fun-back {
+  width: 450px;
+  height: 250px;
+  margin: 20px;
+  background-color: #f73f368c;
+  border-radius: 70% 0%/ 70% 0%;
+  color: white;
+  text-align: center;
+}
+
+.enjoy-fun {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  padding: 20px;
+  margin: 10px;
+  background-color: #13a78c8c;
+  border-radius: 0% 70%/ 0% 70%;
+  color: #fff;
+  text-align: center;
+}
+
+.enjoy-fun h2 {
+  margin: 0;
+  padding: 0 5px;
+  font-size: 2.25em;
+}
+
+.app-logo {
+  height: 60%;
+}

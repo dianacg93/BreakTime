@@ -1,6 +1,8 @@
 # BreakTime
 
-![BreakTime Logo](./images/wireFrame/1.png)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6515fd76-3084-437c-8da9-fc32f293d9bd/deploy-status)](https://app.netlify.com/sites/breaktimee/deploys)
+
+![BreakTime Logo](./src/images/wireFrame/1.png)
 Table of contents
 
 - [Project Description](#project-description)
@@ -16,17 +18,17 @@ You are at work, and it's time for a break, what better to do than head over to 
 
 ## Wireframes
 
-![BreakTime Mobile - Home, Trivia](./images/wireFrame/3.png)
-![BreakTime Mobile - Facts, Jokes](./images/wireFrame/4.png)
-![BreakTime Desktop - Home](./images/wireFrame/5.png)
-![BreakTime Desktop - Trivia](./images/wireFrame/6.png)
-![BreakTime Desktop - Facts](./images/wireFrame/7.png)
-![BreakTime Desktop - Jokes](./images/wireFrame/8.png)
-![BreakTime Tablet - Home](./images/wireFrame/9.png)
+![BreakTime Mobile - Home, Trivia](./src/images/wireFrame/3.png)
+![BreakTime Mobile - Facts, Jokes](./src/images/wireFrame/4.png)
+![BreakTime Desktop - Home](./src/images/wireFrame/5.png)
+![BreakTime Desktop - Trivia](./src/images/wireFrame/6.png)
+![BreakTime Desktop - Facts](./src/images/wireFrame/7.png)
+![BreakTime Desktop - Jokes](./src/images/wireFrame/8.png)
+![BreakTime Tablet - Home](./src/images/wireFrame/9.png)
 
 ## Component Hierarchy
 
-![Component hierarchy](./images/component_hierarchy.png)
+![Component hierarchy](./src/images/component_hierarchy.png)
 
 ## APIs Used
 

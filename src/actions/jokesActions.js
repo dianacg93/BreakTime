@@ -21,9 +21,7 @@ export function fetchJoke() {
     return async (dispatch) => {
         dispatch(getJoke())
         try{
-            // const res = await axios.get(`https://v2.jokeapi.dev/joke/Any`)
             const res = await fetchJokesApi();
-            console.log("RES", res)
             dispatch(getJokeSuccess(res))
         }
         catch(e) {

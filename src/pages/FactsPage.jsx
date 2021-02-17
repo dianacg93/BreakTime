@@ -15,7 +15,7 @@ const FactsPage = ({ dispatch, loading, facts, hasErrors }) => {
   };
 
   const factsClick = () => {
-    fetchFacts();
+    dispatch(fetchFacts());
   };
 
   return (

@@ -3,7 +3,29 @@
 }
 
 .navigat {
-  /* text-align: right; */
+  max-height: 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  background-color: #76d9ef1a;
+}
+
+.nav-links {
+  max-width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px 0 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.25em;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bold;
+  color: #f65952;
+  padding: 0 5px;
+}
+
+.nav-link:hover {
+  color: #62d5ce;
 }
