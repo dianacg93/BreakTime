@@ -1,5 +1,7 @@
 # BreakTime
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6515fd76-3084-437c-8da9-fc32f293d9bd/deploy-status)](https://app.netlify.com/sites/breaktimee/deploys)
+
 ![BreakTime Logo](./src/images/wireFrame/1.png)
 Table of contents
 
