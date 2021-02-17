@@ -28,10 +28,10 @@ const TriviaQuestionList = ({trivia, questionIndex, userAnswer, handleChangeQues
         <Grid>
             <Container>
                 <FormControl>
-                    <Typography variant="h5">{htmlDecode(trivia[currentQuestionIndex].question)}</Typography>
+                    <Typography variant="h5">{htmlDecode(trivia[questionIndex].question)}</Typography>
                     <div style={{display:"flex", justifyContent:"space-around"}}>
-                        <p><strong>{trivia[currentQuestionIndex].category}</strong></p>
-                        <p><strong>{trivia[currentQuestionIndex].difficulty}</strong></p>
+                        <p><strong>{trivia[questionIndex].category}</strong></p>
+                        <p><strong>{trivia[questionIndex].difficulty}</strong></p>
                     </div>
                     {
                         randomOptions.map((option, i) => {
