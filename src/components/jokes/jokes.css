@@ -1,0 +1,191 @@
+@media only screen and (max-width: 1930px) {
+  .jokes-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .jokes-container h1 {
+    font-size: 3em;
+    font-family: "Nanum Gothic";
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .blob-container {
+    position: relative;
+    color: white;
+  }
+
+  .blob-container img {
+    width: 150%;
+  }
+
+  .blob-text {
+    font-size: 1.75em;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+  }
+
+  .blob-text img {
+    width: 95%;
+    margin: -30px;
+  }
+
+  .joke-container {
+    justify-content: left;
+    margin-top: 30px;
+  }
+
+  .joke {
+    max-width: 750px;
+    margin: 35px 10px;
+    height: 130px;
+  }
+
+  .joke h2 {
+    margin: 10px 0;
+    font-size: 2em;
+  }
+
+  .joke h3 {
+    margin: 10px;
+    font-size: 2em;
+  }
+
+  .joke-container button {
+    background-color: #cd98e8;
+    color: #000;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 10px;
+    font-size: 1.5em;
+    font-family: "Nanum Gothic";
+    font-weight: bold;
+    margin: 0 10px;
+    width: 170px;
+    display: flex;
+    justify-self: left;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .blob-container {
+    position: relative;
+    color: white;
+    width: 90%;
+  }
+
+  .blob-container img {
+    width: 90%;
+  }
+
+  .blob-text {
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+  }
+
+  .blob-text img {
+    width: 80%;
+    margin: -55px;
+  }
+
+  .joke {
+    margin: 35px 10px;
+    min-height: 200px;
+  }
+
+  .joke h2 {
+    margin: 10px 0;
+    font-size: 3em;
+  }
+
+  .joke h3 {
+    margin: 10px;
+    font-size: 2.5em;
+  }
+
+  .joke-container button {
+    background-color: #cd98e8;
+    color: #000;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 20px;
+    font-size: 2.5em;
+    font-family: "Nanum Gothic";
+    font-weight: bold;
+    margin: 0 10px;
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .jokes-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .jokes-container h1 {
+    font-size: 2em;
+    font-family: "Nanum Gothic";
+    margin: 10px 5px;
+  }
+
+  .blob-container {
+    position: relative;
+    color: white;
+    margin: 0;
+    width: 100%;
+  }
+
+  .blob-container img {
+    width: 97%;
+  }
+
+  .blob-text {
+    font-size: 1.25em;
+    position: absolute;
+    top: 45%;
+    left: 180px;
+    transform: translate(-50%, -40%);
+  }
+
+  .blob-text img {
+    width: 80%;
+    margin: 0;
+  }
+
+  .joke {
+    margin: 0 10px;
+    min-height: 150px;
+  }
+
+  .joke h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+  }
+
+  .joke h3 {
+    margin: 10px;
+    font-size: 1.25em;
+  }
+
+  .joke-container button {
+    background-color: #cd98e8;
+    color: #000;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 10px;
+    font-size: 1.5em;
+    font-family: "Nanum Gothic";
+    font-weight: bold;
+    margin: 0 10px;
+  }
+}
