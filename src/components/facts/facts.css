@@ -40,11 +40,7 @@
 .facts-display {
   font-family: "NanumGothic-Regular";
   display: flex;
-  position: absolute;
-  visibility: visible;
-  right: 10px;
-  bottom: 450px;
-  z-index: 200;
+  justify-content: right;
 }
 .facts-display h3 {
   font-family: "NanumGothic-Regular";
@@ -77,5 +73,24 @@
   .jokes-container {
     display: flex;
     flex-direction: column;
+  }
+  .facts-button button {
+    font-family: "Luducudu";
+    letter-spacing: 2px;
+    font-size: 28px;
+    background-color: #cd98e8;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    visibility: visible;
+    right: 100px;
+    bottom: 600px;
+    z-index: 200;
   }
 }
